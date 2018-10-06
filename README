@@ -1,6 +1,16 @@
 **************This code is based on the code from internet.
 **************contact: Du, Changbin <changbin.du@gmail.com>
 
+**Note:如果报错Can not open /dev/secbulk0......** 
+可以进行如下操作:
+    1. 将开发板设置为usb启动方式并连接好usb线 
+    2. 再在/dev/下找到类似secbulk的设备, 如在我的Arch Linux下为: /dev/secbulk2 
+    3. 编辑文件dnw-linux/src/dnw/dnw.c, 搜索找到/dev/secbulk0, 并修改为你电脑上 
+       对应的设备编号(如在我的系统里应修改为/dev/secbulk2), 修改后保存退出 
+    4. 返回dnw-linux目录, 进行编译安装(如下)
+
+
+
 1. build and install
 =====================
 	$ make
